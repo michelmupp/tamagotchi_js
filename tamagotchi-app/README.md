@@ -1,65 +1,62 @@
-# Svelte library
+# 🐣 Tamagotchi JS
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+Ein virtuelles Haustier, das in deinem Browser lebt – inspiriert von den klassischen Tamagotchis der 90er Jahre, aber modern umgesetzt mit Svelte!
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## ✨ Features
 
-## Creating a project
+- 🎮 **Klassische Tamagotchi-Mechaniken** – Füttern, Spielen, Schlafen und Reinigen
+- 📊 **Level-System** – Sammle XP und steige im Level auf
+- 🦋 **Evolution** – Dein Tamagotchi entwickelt sich vom Baby zum Teen und schließlich zum Erwachsenen
+- 🏆 **Achievements** – Schalte Erfolge frei für besondere Meilensteine
+- 🪙 **Münz-System** – Verdiene Münzen durch Aktionen und Level-Ups
+- 🌙 **Tag/Nacht-Modus** – Der Bildschirm passt sich automatisch der Tageszeit an
+- 🌤️ **Dynamisches Wetter** – Zufälliges Wetter auf dem Bildschirm
+- ⏱️ **Cooldown-System** – Ausgewogenes Gameplay mit Abklingzeiten für Aktionen
+- 💾 **Auto-Save** – Dein Fortschritt wird automatisch im Browser gespeichert
+- 📱 **Responsive Design** – Spielbar auf Desktop und Mobilgeräten
+- 🎨 **Retro-Design** – Pixel-Look mit modernen Animationen
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🎯 So funktioniert's
 
-```sh
-# create a new project in the current directory
-npx sv create
+### Werte deines Tamagotchis:
+- 🍔 **Hunger** – Steigt mit der Zeit. Füttere dein Tamagotchi, bevor es verhungert!
+- 😊 **Freude** – Sinkt langsam. Spiele mit ihm, um es glücklich zu machen.
+- ⚡ **Energie** – Wird weniger. Lass es schlafen, um neue Kraft zu tanken.
+- ❤️ **Gesundheit** – Sinkt bei Vernachlässigung. Halte alle Werte im grünen Bereich!
 
-# create a new project in my-app
-npx sv create my-app
-```
+### Aktionen:
+| Aktion | Effekt | Cooldown |
+|--------|--------|----------|
+| 🍖 Füttern | -25 Hunger, +5 Freude | 15s |
+| ⚽ Spielen | +15 Freude, +10 Hunger, -5 Energie | 20s |
+| 💤 Schlafen | +25 Energie | 30s |
+| 🧹 Reinigen | +5 Gesundheit | 10s |
 
-To recreate this project with the same configuration:
+### Level-System:
+- Jede Aktion gibt XP
+- Bei Level-Up: Gesundheit & Freude steigen
+- XP-Bedarf steigt mit jedem Level
+- Evolution bei Level 3 (Teen) und Level 7 (Adult)
 
-```sh
-# recreate this project
-npx sv@0.15.2 create --template library --types ts --install npm tamagotchi-app
-```
+### Achievements:
+- 🍽️ **Erste Mahlzeit** – Zum ersten Mal gefüttert
+- 🎉 **Level 5** – Level 5 erreicht
+- 🏆 **Level 10** – Level 10 Meister
+- 💰 **Reich** – 100 Münzen gesammelt
+- 🏅 **Überlebenskünstler** – 1 Stunde am Leben
 
-## Developing
+## 🚀 Installation & Entwicklung
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+# Repository klonen
+git clone https://github.com/michelmupp/tamagotchi_js.git
+cd tamagotchi_js
 
-```sh
+# Abhängigkeiten installieren
+npm install
+
+# Entwicklungsserver starten
 npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```sh
-npm pack
-```
-
-To create a production version of your showcase app:
-
-```sh
+# Produktions-Build erstellen
 npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```sh
-npm publish
-```
